@@ -1,0 +1,81 @@
+:root {
+    --secondaryColor: #ab966f;
+}
+
+body {
+    font-family: "Marcellus SC", serif;
+    background-image: url(https://i.redd.it/0tt5xcl673w81.jpg);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#loreTitle,
+#loreText,
+#timeline {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* RANGE INPUT STYLING*/
+#timeline {
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+#timeline:focus {
+    outline: none;
+}
+
+/* Track */
+#timeline::-webkit-slider-runnable-track {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: none;
+}
+
+#timeline::-moz-range-track {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: none;
+}
+
+/* Thumb */
+#timeline::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: var(--secondaryColor);
+    cursor: grab;
+    margin-top: -8px;
+}
+
+#timeline::-moz-range-thumb {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background: var(--secondaryColor);
+    cursor: grab;
+}
+
+/* Active */
+#timeline:active::-webkit-slider-thumb {
+    cursor: grabbing;
+}
+
+#timeline:active::-moz-range-thumb {
+    cursor: grabbing;
+}
