@@ -1,17 +1,37 @@
 [
     {
         "title": "The Age of Ancients",
-        "text": [
-            "In the Age of Ancients, the world was still and formless, shrouded by fog. Time did not exist, and everlasting dragons roamed the land.",
-            ""
-        ]
+        "text": "In the Age of Ancients, the world was still and formless, shrouded by fog. Time did not exist, and everlasting dragons roamed the land.",
+        "backgroundImageURL": "backgroundAgeOfAncients.png"
     },
     {
         "title": "The Age of Disparity",
-        "text": ""
+        "text": "The First Flame emerged from an unknown source, and with it came disparity. The First Flame brought light and dark, heat and cold, and life and death.",
+        "backgroundImageURL": "backgroundAgeOfDisparity.png"
+    },
+    {
+        "title": "The War Against the Dragons",
+        "text": "debug placeholder",
+        "backgroundImageURL": "backgroundWarAgainstTheDragons.png"
     },
     {
         "title": "The Age of Fire",
-        "text": ""
+        "text": "debug placeholder",
+        "backgroundImageURL": "backgroundAgeOfFire.png"
+    },
+    {
+        "title": "The Fire Fades",
+        "text": "debug placeholder",
+        "backgroundImageURL": "backgroundTheFireFades.png"
+    },
+    {
+        "title": "The Undead Curse",
+        "text": "debug placeholder",
+        "backgroundImageURL": "backgroundUndeadCurse.png"
+    },
+    {
+        "title": "The Chosen Undead",
+        "text": "debug placeholder",
+        "backgroundImageURL": "backgroundChosenUndead.png"
     }
 ]

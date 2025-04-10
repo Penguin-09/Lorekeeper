@@ -20,7 +20,7 @@
         >
             <!-- Title -->
             <p
-                class="text-8xl text-(--secondaryColor) text-center mb-7"
+                class="text-8xl text-(--secondaryColor) text-center mb-7 max-w-4xl"
                 id="loreTitle"
             >
                 Loading...
@@ -39,10 +39,16 @@
         <input
             class="mb-5 shadow-lg backdrop-blur-[2px] absolute bottom-0 w-11/12 left-1/2 transform -translate-x-1/2"
             type="range"
+            list="markers"
             value="0"
             min="0"
-            max="500"
+            max="300"
             id="timeline"
         />
+
+        <!-- <datalist id="markers">
+            <option value="0"></option>
+            <option value="100"></option>
+          </datalist> -->
     </body>
 </html>
