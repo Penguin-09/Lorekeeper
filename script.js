@@ -33,7 +33,7 @@ async function getLoreData() {
  * Print the lore and the lore title of the specified era on the web page
  * @param {number} index which era of lore to print
  */
-async function printLore(data, index = 0) {
+async function printLore(data, index = 0, slidingLeft = false) {
     const loreTitleElement = document.getElementById("loreTitle");
     const loreTextElement = document.getElementById("loreText");
     const bodyElement = document.body;
@@ -43,19 +43,47 @@ async function printLore(data, index = 0) {
     // Set background
     bodyElement.style.backgroundImage = `url(images/${eraData.backgroundImageURL})`;
 
+    // Clear existing animations
+    loreTitleElement.classList.remove(
+        "slideInFromLeft",
+        "slideInFromRight",
+        "slideOutToLeft",
+        "slideOutToRight"
+    );
+    loreTextElement.classList.remove(
+        "slideInFromLeft",
+        "slideInFromRight",
+        "slideOutToLeft",
+        "slideOutToRight"
+    );
+
     // Begin animation
-    loreTitleElement.classList.add("slideOut");
-    loreTextElement.classList.add("slideOut");
+    if (slidingLeft) {
+        loreTitleElement.classList.add("slideOutToLeft");
+        loreTextElement.classList.add("slideOutToLeft");
+    } else {
+        loreTitleElement.classList.add("slideOutToRight");
+        loreTextElement.classList.add("slideOutToRight");
+    }
 
     // Wait until animation is finished, then set the new text
     setTimeout(() => {
         loreTitleElement.innerText = eraData.title;
         loreTextElement.innerText = eraData.text;
 
-        loreTitleElement.classList.remove("slideOut");
-        loreTextElement.classList.remove("slideOut");
-        loreTitleElement.classList.add("slideIn");
-        loreTextElement.classList.add("slideIn");
+        // Clear existing animations
+        loreTitleElement.classList.remove("slideOutToLeft", "slideOutToRight");
+        loreTextElement.classList.remove("slideOutToLeft", "slideOutToRight");
+
+        if (slidingLeft) {
+            // New content comes in from right
+            loreTitleElement.classList.add("slideInFromRight");
+            loreTextElement.classList.add("slideInFromRight");
+        } else {
+            // New content comes in from left
+            loreTitleElement.classList.add("slideInFromLeft");
+            loreTextElement.classList.add("slideInFromLeft");
+        }
     }, 400);
 
     console.debug("Lore printed on the web page");
@@ -79,11 +107,24 @@ getLoreData().then((data) => {
     rangeSlider.addEventListener("input", () => {
         rangeValue = rangeElement.value;
 
-        // Check if the current era has changed
-        if (Math.floor(rangeValue / (eraLength + 1)) !== currentEra) {
-            currentEra = Math.floor(rangeValue / eraLength);
-            console.debug("Lore changed to era: ", currentEra);
-            printLore(data, currentEra);
+        const newEra = Math.floor(rangeValue / eraLength);
+
+        if (newEra !== currentEra) {
+            console.debug(
+                "Lore changed from era",
+                currentEra,
+                "to era:",
+                newEra
+            );
+
+            // Determine direction (going forward or backward in time)
+            const toRight = newEra < currentEra;
+
+            // Update current era
+            currentEra = newEra;
+
+            // Print lore with the appropriate direction
+            printLore(data, currentEra, toRight);
         }
     });
 });

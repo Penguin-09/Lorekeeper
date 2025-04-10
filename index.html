@@ -16,11 +16,11 @@
     <body class="text-white bg-repeat bg-cover">
         <!-- Main Content -->
         <div
-            class="flex flex-col items-center justify-center h-screen text-shadow-lg/20"
+            class="flex flex-col mx-2 items-center justify-center h-screen text-shadow-lg/30"
         >
             <!-- Title -->
             <p
-                class="text-8xl text-(--secondaryColor) text-center mb-7 max-w-4xl"
+                class="text-5xl md:text-7xl lg:text-8xl text-(--secondaryColor) text-center mb-7 max-w-4xl"
                 id="loreTitle"
             >
                 Loading...
@@ -28,7 +28,7 @@
 
             <!-- Text -->
             <p
-                class="text-2xl text-center tracking-wide max-w-4xl"
+                class="text-xl md:text-2xl lg:text-3xl text-center tracking-wide max-w-4xl"
                 id="loreText"
             >
                 Loading...
@@ -36,19 +36,33 @@
         </div>
 
         <!-- Timeline -->
-        <input
-            class="mb-5 shadow-lg backdrop-blur-[2px] absolute bottom-0 w-11/12 left-1/2 transform -translate-x-1/2"
-            type="range"
-            list="markers"
-            value="0"
-            min="0"
-            max="300"
-            id="timeline"
-        />
+        <div id="timelineContainer">
+            <div
+                class="mb-5 flex backdrop-blur-[2px] absolute bottom-0 w-11/12 left-1/2 transform -translate-x-1/2"
+            >
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">Age of Ancients</div>
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">Age of Disparity</div>
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">War against Dragons</div>
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">Age of Fire</div>
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">The Fire Fades</div>
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">The Undead Curse</div>
+                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">The Chosen Undead</div>
+            </div>
 
-        <!-- <datalist id="markers">
+            <input
+                class="mb-5 shadow-lg absolute bottom-0 w-11/12 left-1/2 transform -translate-x-1/2"
+                type="range"
+                list="markers"
+                value="18"
+                min="0"
+                max="300"
+                id="timeline"
+            />
+
+            <!-- <datalist id="markers">
             <option value="0"></option>
             <option value="100"></option>
           </datalist> -->
+        </div>
     </body>
 </html>
