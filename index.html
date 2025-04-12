@@ -13,10 +13,60 @@
         <link rel="stylesheet" href="style.css" />
         <script src="script.js" defer></script>
     </head>
-    <body class="text-white bg-repeat bg-cover">
+    <body class="text-white bg-black">
+        <!-- Background Video -->
+        <video class="absolute" autoplay muted loop>
+            <source
+                src="videos/AgeOfAncients.mp4"
+                type="video/mp4"
+                id="source"
+            />
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Pop up -->
+        <div
+            class="p-5 z-100 flex flex-col items-center text-shadow-lg/40 shadow-lg/40 bg-neutral-800 border-3 border-(--secondaryColor) absolute top-1/2 transform -translate-y-1/2 left-1/2 transform -translate-x-1/2"
+            id="popup"
+        >
+            <p
+                class="text-5xl md:text-7xl lg:text-8xl text-(--secondaryColor) text-center mb-4"
+            >
+                Welcome to Lorekeeper!
+            </p>
+
+            <p class="text-xl md:text-2xl lg:text-3xl text-center mb-4">
+                I've always found it tough to explain the intricate lore of Dark
+                Souls. That's why i made
+                <span class="text-(--secondaryColor)">Lorekeeper</span
+                >!<br />Lorekeeper gives you a clear, chronological summary of
+                the key plot points in Dark Souls I. Use the slider at the
+                bottom of the screen to explore the story step by step.
+            </p>
+
+            <button
+                class="flex items-center text-xl md:text-2xl lg:text-3xl shadow-lg/40 p-2 bg-(--secondaryColor) w-min border-3 border-neutral-200"
+                id="closeButton"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-x-lg"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                    />
+                </svg>
+                CLOSE
+            </button>
+        </div>
+
         <!-- Main Content -->
         <div
-            class="flex flex-col mx-2 items-center justify-center h-screen text-shadow-lg/30"
+            class="flex flex-col mx-2 items-center justify-center h-screen text-shadow-lg/60"
         >
             <!-- Title -->
             <p
@@ -38,15 +88,43 @@
         <!-- Timeline -->
         <div id="timelineContainer">
             <div
-                class="mb-5 flex backdrop-blur-[2px] absolute bottom-0 w-11/12 left-1/2 transform -translate-x-1/2"
+                class="mb-5 flex text-shadow-lg/50 backdrop-blur-[2px] absolute bottom-0 w-11/12 left-1/2 transform -translate-x-1/2"
             >
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">Age of Ancients</div>
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">Age of Disparity</div>
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">War against Dragons</div>
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">Age of Fire</div>
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">The Fire Fades</div>
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">The Undead Curse</div>
-                <div class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full hidden font-semibold xl:flex items-center justify-center">The Chosen Undead</div>
+                <div
+                    class="w-100 me-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">Age of Ancients</p>
+                </div>
+                <div
+                    class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">Age of Disparity</p>
+                </div>
+                <div
+                    class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">War against Dragons</p>
+                </div>
+                <div
+                    class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">Age of Fire</p>
+                </div>
+                <div
+                    class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">The Fire Fades</p>
+                </div>
+                <div
+                    class="w-100 mx-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">The Undead Curse</p>
+                </div>
+                <div
+                    class="w-100 ms-1 h-5 bg-neutral-50/30 rounded-full font-semibold xl:flex items-center justify-center"
+                >
+                    <p class="hidden xl:flex">The Chosen Undead</p>
+                </div>
             </div>
 
             <input

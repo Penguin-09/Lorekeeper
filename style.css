@@ -4,6 +4,26 @@
 
 body {
     font-family: "Marcellus SC", serif;
+    overflow: hidden;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#closeButton {
+    transition: transform 0.3s ease;
+}
+
+#closeButton:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 /* ANIMATIONS */

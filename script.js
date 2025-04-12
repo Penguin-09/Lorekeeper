@@ -36,12 +36,15 @@ async function getLoreData() {
 async function printLore(data, index = 0, slidingLeft = false) {
     const loreTitleElement = document.getElementById("loreTitle");
     const loreTextElement = document.getElementById("loreText");
-    const bodyElement = document.body;
+    const sourceElement = document.getElementById("source");
+    const videoElement = document.querySelector("video");
 
     const eraData = data[index];
 
-    // Set background
-    bodyElement.style.backgroundImage = `url(images/${eraData.backgroundImageURL})`;
+    // Set background video
+    sourceElement.src = "videos/" + eraData.backgroundVideoUrl;
+    videoElement.load();
+    videoElement.play();
 
     // Clear existing animations
     loreTitleElement.classList.remove(
@@ -117,7 +120,7 @@ getLoreData().then((data) => {
                 newEra
             );
 
-            // Determine direction (going forward or backward in time)
+            // Determine direction
             const toRight = newEra < currentEra;
 
             // Update current era
@@ -126,5 +129,13 @@ getLoreData().then((data) => {
             // Print lore with the appropriate direction
             printLore(data, currentEra, toRight);
         }
+    });
+
+    // Close Button listener
+    const closeButton = document.getElementById("closeButton");
+    const popUpElement = document.getElementById("popup");
+    closeButton.addEventListener("click", () => {
+        popUpElement.remove();
+        console.debug("Lore pop-up closed");
     });
 });
