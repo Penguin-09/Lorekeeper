@@ -1,6 +1,6 @@
 /**
  * Fetch all lore data from json or local storage
- * @returns {Array<Lore>} all lore data
+ * @returns {Array<Lore>} - all lore data
  */
 async function getLoreData() {
     try {
@@ -30,8 +30,35 @@ async function getLoreData() {
 }
 
 /**
+ * Pre-cache all background images
+ * @param {Array<Lore>} data - All lore data containing background image URLs
+ */
+function preloadBackgroundImages(data) {
+    const preloadedImages = [];
+
+    // Loop through all lore data and preload each background image
+    data.forEach((era, index) => {
+        const img = new Image();
+        img.src = `images/${era.backgroundImageUrl}`;
+
+        img.onload = () => {
+            preloadedImages.push(era.backgroundImageUrl);
+            console.debug(
+                `Preloaded image ${index + 1}/${data.length}: ${
+                    era.backgroundImageUrl
+                }`
+            );
+        };
+
+        img.onerror = () => {
+            console.error(`Failed to preload image: ${era.backgroundImageUrl}`);
+        };
+    });
+}
+
+/**
  * Print the lore and the lore title of the specified era on the web page
- * @param {number} index which era of lore to print
+ * @param {number} index - which era of lore to print
  */
 async function printLore(data, index = 0, slidingLeft = false) {
     const loreTitleElement = document.getElementById("loreTitle");
@@ -94,6 +121,7 @@ let rangeValue = rangeElement.value;
 const rangeMax = rangeElement.max;
 
 getLoreData().then((data) => {
+    preloadBackgroundImages(data);
     printLore(data);
 
     const totalEras = data.length - 1;
