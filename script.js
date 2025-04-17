@@ -36,15 +36,12 @@ async function getLoreData() {
 async function printLore(data, index = 0, slidingLeft = false) {
     const loreTitleElement = document.getElementById("loreTitle");
     const loreTextElement = document.getElementById("loreText");
-    const sourceElement = document.getElementById("source");
-    const videoElement = document.querySelector("video");
+    const bodyElement = document.body;
 
     const eraData = data[index];
 
-    // Set background video
-    sourceElement.src = "videos/" + eraData.backgroundVideoUrl;
-    videoElement.load();
-    videoElement.play();
+    // Set background
+    bodyElement.style.backgroundImage = `url(images/${eraData.backgroundImageUrl})`;
 
     // Clear existing animations
     loreTitleElement.classList.remove(
@@ -116,7 +113,7 @@ getLoreData().then((data) => {
             console.debug(
                 "Lore changed from era",
                 currentEra,
-                "to era:",
+                "to era ",
                 newEra
             );
 

@@ -2,36 +2,36 @@
     {
         "title": "The Age of Ancients",
         "text": "In the Age of Ancients, the world was still and formless, shrouded by fog. Time did not exist, and everlasting dragons roamed the land.",
-        "backgroundVideoUrl": "ageOfAncients.mp4"
+        "backgroundImageUrl": "ageOfAncients.png"
     },
     {
         "title": "The Age of Disparity",
         "text": "The First Flame emerged from an unknown source, and with it came disparity. From the Flame came light and dark, heat and cold, life and death. Near this primal source, powerful beings discovered the Lord Souls. Gwyn claimed the Soul of Light and rose as the Lord of Sunlight. The Witch of Izalith seized the Soul of Life. Nito embraced the Soul of Death, becoming the first of the dead. And the Furtive Pygmy found the Dark Soul, giving fragments of it to his offspring, who became the first humans.",
-        "backgroundVideoUrl": "ageOfDisparity.mp4"
+        "backgroundImageUrl": "ageOfDisparity.png"
     },
     {
         "title": "The War Against the Dragons",
         "text": "The lords waged war on the dragons with Gwyn's lightning, the Witch's firestorms, and Nito's miasma of death. A dragon called Seath the Scaleless betrayed his kind and helped the lords in their war. The dragons were defeated, and the Age of Fire began.",
-        "backgroundVideoUrl": "theWarAgainstTheDragons.mp4"
+        "backgroundImageUrl": "theWarAgainstTheDragons.png"
     },
     {
         "title": "The Age of Fire",
         "text": "After defeating the dragons, Gwyn established the Age of Fire. He built Anor Londo, and created a kingdom for gods and humans. Fearing the infinite potential of the Dark Soul, he forced a ring of fire around the Dark Soul to contain its powers and weaken the humans.",
-        "backgroundVideoUrl": "ageOfFire.mp4"
+        "backgroundImageUrl": "ageOfFire.png"
     },
     {
         "title": "The Fire Fades",
         "text": "As time passed, the First Flame began to fade. To preserve the Age of Fire, Gwyn sacrificed himself to rekindle the First Flame. This temporarily extended the Age of Fire, but it also led to the rise of the undead curse.",
-        "backgroundVideoUrl": "theFireFades.mp4"
+        "backgroundImageUrl": "theFireFades.png"
     },
     {
         "title": "The Undead Curse",
         "text": "As the First Flame fades again, humans are marked with the Darksign, becoming undead. Those who lose their purpose become hollow, and lose any humanity they have left.",
-        "backgroundVideoUrl": "theUndeadCurse.mp4"
+        "backgroundImageUrl": "theUndeadCurse.png"
     },
     {
         "title": "The Chosen Undead",
         "text": "The Gods manufacture a prophecy which states that some undead are chosen by fate to journey to Lordran, collect powerful souls, and offer themselves to the First Flame, rekindling it with the powerful souls they have collected, in hopes of extending the Age of Fire. They do this in blind devotion to Gwyn, not knowing that he is the one who cursed them with the Darksign, and turned them into slaves. The humans are thrown into a cycle, forced to carry out the will of the gods until they go hollow.",
-        "backgroundVideoUrl": "theUndeadCurse.mp4"
+        "backgroundImageUrl": "theChosenUndead.png"
     }
 ]
